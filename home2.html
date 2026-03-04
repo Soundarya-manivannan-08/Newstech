@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech News - Home 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header>
+    <div class="logo">Stackly</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-list">
+        <a href="index.html">Home 1</a>
+        <a href="home2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        
+    </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Trending Technology Stories 2026</h1>
+        <p>Discover what’s happening in the world of innovation</p>
+    </div>
+</section>
+
+<!-- TRENDING NEWS -->
+<section class="container">
+    <h2 class="section-title">🔥 Trending News</h2>
+
+    <div class="grid-3">
+
+        <div class="card">
+            <img src="images/mobile.jpg">
+            <h3>New Smartphone Launch</h3>
+            <p>Latest smartphone powered with AI chipset and advanced camera technology.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/ai.jpg">
+            <h3>AI in Healthcare</h3>
+            <p>AI systems helping doctors detect diseases faster and accurately.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/cyber.jpg">
+            <h3>Cybersecurity Alert</h3>
+            <p>Major security updates released to prevent global cyber attacks.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TECHNOLOGY CATEGORIES -->
+<section class="container">
+    <h2 class="section-title">📂 Technology Categories</h2>
+
+    <div class="grid-3">
+        <div class="card center">
+            <h3>Artificial Intelligence</h3>
+            <p>Machine learning, automation & robotics</p>
+        </div>
+
+        <div class="card center">
+            <h3>Gadgets</h3>
+            <p>Smartphones, laptops & smart devices</p>
+        </div>
+
+        <div class="card center">
+            <h3>Software</h3>
+            <p>Web apps, mobile apps & cloud platforms</p>
+        </div>
+    </div>
+</section>
+
+<!-- TECH VIDEO SECTION -->
+<section class="container">
+    <h2 class="section-title">🎥 Featured Tech Video</h2>
+
+    <div class="card">
+        <iframe width="100%" height="400"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="cta">
+    <h2>Subscribe for Weekly Tech Updates</h2>
+    <p>Get the latest technology news delivered to your inbox.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>TechNews Modern</h3>
+            <p>Your daily source of technology updates.</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#">Privacy Policy</a><br>
+            <a href="#">Terms of Service</a>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+            <p>Email: support@technews.com</p>
+        </div>
+    </div>
+
+    <p style="text-align:center;">© 2026 TechNews. All Rights Reserved.</p>
+</footer>
+
+<script >
+  
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
+
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active'); // open/close nav
+    menuToggle.classList.toggle('open'); // animate hamburger
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('#nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuToggle.classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>

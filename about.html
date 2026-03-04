@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - TechNews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Stackly</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-list">
+        <a href="index.html">Home 1</a>
+        <a href="home2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        
+    </nav>
+</header>
+<!-- ABOUT SECTION -->
+<section class="container">
+    <h1 class="section-title">About TechNews</h1>
+
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+                TechNews is a modern online technology news platform dedicated to delivering 
+                accurate and up-to-date information about Artificial Intelligence, Cybersecurity, 
+                Gadgets, Software Development, and Future Innovations.
+            </p>
+
+            <p>
+                Our mission is to make technology news simple, reliable, and accessible 
+                to everyone. We analyze trends, explore innovations, and provide expert insights 
+                to keep you informed in this fast-moving digital world.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+                To become a trusted global source for technology journalism and innovation coverage.
+            </p>
+
+            <h3>Our Mission</h3>
+            <ul>
+                <li>Deliver real-time tech updates</li>
+                <li>Provide expert analysis and reviews</li>
+                <li>Promote awareness about cybersecurity</li>
+                <li>Highlight future innovations and startups</li>
+            </ul>
+        </div>
+
+        <div class="about-image">
+            <img src="images/team.jpg" alt="Our Team">
+        </div>
+    </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="container">
+    <h2 class="section-title">Meet Our Team</h2>
+
+    <div class="grid-3">
+        <div class="card center">
+            <img src="images/team1.jpg" alt="Editor">
+            <h3>John Smith</h3>
+            <p>Chief Editor</p>
+        </div>
+
+        <div class="card center">
+            <img src="images/team2.jpg" alt="Tech Analyst">
+            <h3>Sarah Johnson</h3>
+            <p>Senior Tech Analyst</p>
+        </div>
+
+        <div class="card center">
+            <img src="images/team3.jpg" alt="Developer">
+            <h3>David Lee</h3>
+            <p>Web Developer</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="container">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="grid-3">
+        <div class="card center">
+            <h3>✔ Trusted Sources</h3>
+            <p>All news verified before publishing.</p>
+        </div>
+
+        <div class="card center">
+            <h3>✔ Fast Updates</h3>
+            <p>Real-time coverage of breaking tech news.</p>
+        </div>
+
+        <div class="card center">
+            <h3>✔ Expert Analysis</h3>
+            <p>In-depth articles from industry professionals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p style="text-align:center;">© 2026 TechNews. All Rights Reserved.</p>
+</footer>
+
+<script >
+  
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
+
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active'); // open/close nav
+    menuToggle.classList.toggle('open'); // animate hamburger
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('#nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuToggle.classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>

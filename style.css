@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary: #00f2ff;
+    --secondary: #7000ff;
+    --bg-dark: #08080c;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-light: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Desktop Navbar --- */
+/* --- DESKTOP NAVIGATION --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #0a0b10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f2ff;
+}
+
+/* --- Desktop Navbar --- */
+header {
+    background-color: #0f172a; /* Dark Navy */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #38bdf8; /* Sky Blue */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+#nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#nav-list a:hover {
+    color: #38bdf8;
+}
+
+/* --- Hamburger Menu Icon --- */
+.menu-toggle {
+    display: none; /* Hidden on Desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* --- Responsive Mobile View --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show on Mobile */
+    }
+
+    #nav-list {
+        position: absolute;
+        top: 100%; /* Sits right below header */
+        left: 0;
+        width: 100%;
+        background-color: #1e293b;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        clip-path: circle(0% at 100% 0%); /* Starts hidden */
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    /* When JavaScript adds the 'active' class */
+    #nav-list.active {
+        clip-path: circle(150% at 100% 0%); /* Reveals menu */
+    }
+
+    /* Hamburger to X Animation */
+    .menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('http://googleusercontent.com/image_collection/image_retrieval/4525310765709673236_0');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-content p {
+    color: var(--primary);
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.btn {
+    padding: 15px 35px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.4s;
+    display: inline-block;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* --- CONTAINERS & CARDS --- */
+.container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s ease;
+    animation: fadeInUp 1s both;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.08);
+    border-color: var(--primary);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card.large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.card.large img {
+    height: 350px;
+    border-radius: 15px;
+}
+
+.card h3 { padding: 20px 20px 10px; }
+.card p { padding: 0 20px 20px; color: #aaa; font-size: 0.9rem; }
+
+.center { text-align: center; padding: 40px 20px; }
+
+/* --- CTA SECTION --- */
+.cta {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('http://googleusercontent.com/image_collection/image_retrieval/438899927655032242_0');
+    background-attachment: fixed;
+    padding: 100px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cta button {
+    padding: 15px 40px;
+    background: var(--primary);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover { background: white; transform: scale(1.05); }
+
+/* --- FOOTER --- */
+footer {
+    background: #040406;
+    padding: 60px 8% 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.copyright { text-align: center; color: #555; font-size: 0.8rem; }
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .card.large { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.2rem; }
+}
+
+
+/* ================= VIDEO COVER ================= */
+
+.video-cover {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Video */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Dark Overlay */
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Text Content */
+.video-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.video-content p {
+    color: var(--primary);
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-content h1 {
+        font-size: 2.2rem;
+    }
+}
